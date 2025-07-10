@@ -20,6 +20,12 @@
 		],
 		"client": [
 			"lexicalerror.halfbloods.HalfbloodsClient"
+		],
+		"cardinal-components": [
+			"lexicalerror.halfbloods.ModComponents"
+		],
+		"fabric-datagen": [
+			"lexicalerror.halfbloods.datagen.Datagen"
 		]
 	},
 	"mixins": [
@@ -37,5 +43,10 @@
 	},
 	"suggests": {
 		"another-mod": "*"
+	},
+	"custom": {
+		"cardinal-components": [
+			"halfbloods:player_component"
+		]
 	}
 }

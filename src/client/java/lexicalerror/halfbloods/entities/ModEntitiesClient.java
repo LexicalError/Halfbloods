@@ -1,0 +1,15 @@
+package lexicalerror.halfbloods.entities;
+
+import lexicalerror.halfbloods.Halfbloods;
+import lexicalerror.halfbloods.entities.renderers.ArcadianHoundsEntityRenderer;
+import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
+import net.minecraft.client.render.entity.ArrowEntityRenderer;
+
+public class ModEntitiesClient {
+    public static void registerModEntityRenderers() {
+        Halfbloods.LOGGER.info("Registering renderers for: " + Halfbloods.MOD_ID);
+
+        EntityRendererRegistry.register(ModEntities.ARCADIAN_HOUND, ArcadianHoundsEntityRenderer::new);
+        EntityRendererRegistry.register(ModEntities.MOONLIT_ARROW, ArrowEntityRenderer::new);
+    }
+}

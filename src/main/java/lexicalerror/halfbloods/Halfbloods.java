@@ -1,5 +1,8 @@
 package lexicalerror.halfbloods;
 
+import lexicalerror.halfbloods.commands.ModCommands;
+import lexicalerror.halfbloods.entities.ModEntities;
+import lexicalerror.halfbloods.items.ModItems;
 import net.fabricmc.api.ModInitializer;
 
 import org.slf4j.Logger;
@@ -11,7 +14,8 @@ public class Halfbloods implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
-
-		LOGGER.info("Hello Fabric world!");
+		ModCommands.register();
+		ModEntities.registerModEntities();
+		ModItems.initialize();
 	}
 }
