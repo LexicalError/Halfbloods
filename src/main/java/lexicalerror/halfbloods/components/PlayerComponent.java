@@ -78,6 +78,9 @@ public class PlayerComponent implements C2SSelfMessagingComponent, AutoSyncedCom
         for (Ability passive : deity.getPassives()) {
             passive.apply(player);
         }
+        for (Ability active : deity.getActives()) {
+            active.apply(player);
+        }
         cooldowns.replaceAll((abilityId, cooldown) -> Math.max(0, cooldown - 1));
     }
 }

@@ -19,9 +19,7 @@ public class ArcadianHoundsActiveAbility implements ActiveAbility{
     }
 
     @Override
-    public void apply(PlayerEntity player) {
-
-    }
+    public void apply(PlayerEntity player) {}
 
     @Override
     public boolean canActivate(PlayerEntity player) {

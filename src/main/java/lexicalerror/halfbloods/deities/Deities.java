@@ -1,7 +1,11 @@
 package lexicalerror.halfbloods.deities;
 
 import lexicalerror.halfbloods.abilities.actives.ArcadianHoundsActiveAbility;
+import lexicalerror.halfbloods.abilities.actives.FiresOfAscensionActiveAbility;
 import lexicalerror.halfbloods.abilities.actives.MoonlitArrowsActiveAbility;
+import lexicalerror.halfbloods.abilities.actives.PurifyingConflagrationActiveAbility;
+import lexicalerror.halfbloods.abilities.passives.DivineRadiancePassiveAbility;
+import lexicalerror.halfbloods.abilities.passives.FlameWardPassiveAbility;
 import lexicalerror.halfbloods.abilities.passives.HuntressPassiveAbility;
 import lexicalerror.halfbloods.abilities.passives.NightsMaidenPassiveAbility;
 import org.jetbrains.annotations.Nullable;
@@ -14,7 +18,14 @@ public enum Deities {
             List.of(new HuntressPassiveAbility(), new NightsMaidenPassiveAbility()),
             List.of(new ArcadianHoundsActiveAbility(), new MoonlitArrowsActiveAbility())
     )),
+    URIEL(new Deity(
+            "URIEL",
+            List.of(new FlameWardPassiveAbility(), new DivineRadiancePassiveAbility()),
+            List.of(new PurifyingConflagrationActiveAbility(), new FiresOfAscensionActiveAbility())
+    )),
     ;
+
+
 
     private final Deity deity;
 

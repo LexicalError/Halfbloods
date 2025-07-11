@@ -1,3 +1,5 @@
 {
-  "item.halfbloods.artemis_bow": "Artemis Bow"
+  "item.halfbloods.artemis_bow": "Artemis Bow",
+  "death.attack.fires_of_ascension": "%s was unworthy to witness Ascension",
+  "death.attack.purifying_conflagration": "%s was incinerated in a Purifying Conflagration"
 }
