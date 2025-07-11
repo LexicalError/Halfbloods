@@ -32,7 +32,8 @@ public class ArcadianHoundsEntity extends WolfEntity {
         return WolfEntity.createWolfAttributes()
                 .add(EntityAttributes.MAX_HEALTH, 60.0D)
                 .add(EntityAttributes.ATTACK_DAMAGE, 10.0D)
-                .add(EntityAttributes.MOVEMENT_SPEED, 0.35D);
+                .add(EntityAttributes.MOVEMENT_SPEED, 0.35D)
+                .add(EntityAttributes.SCALE, 1.7f);
     }
 
     public void setLifeTime(int lifeTime) {
@@ -42,8 +43,8 @@ public class ArcadianHoundsEntity extends WolfEntity {
     @Override
     public Identifier getTextureId() {
         RegistryEntry<WolfVariant> variantEntry = this.getRegistryManager()
-                .getOrThrow(RegistryKeys.WOLF_VARIANT)               // get the WolfVariant registry
-                .getEntry(WolfVariants.ASHEN.getValue())               // get Optional<RegistryEntry<WolfVariant>>
+                .getOrThrow(RegistryKeys.WOLF_VARIANT)
+                .getEntry(WolfVariants.ASHEN.getValue())
                 .orElseThrow(() -> new IllegalStateException("Variant not found"));
         WolfVariant wolfVariant = variantEntry.value();
         if (this.isTamed()) {
@@ -61,11 +62,6 @@ public class ArcadianHoundsEntity extends WolfEntity {
         } else {
             this.getAttributeInstance(EntityAttributes.MAX_HEALTH).setBaseValue(60.0D);
         }
-    }
-
-    @Override
-    public float getScaleFactor() {
-        return 1.7f;
     }
 
     @Override
