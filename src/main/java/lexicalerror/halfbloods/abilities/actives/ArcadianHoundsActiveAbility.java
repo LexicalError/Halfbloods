@@ -11,7 +11,8 @@ import net.minecraft.world.World;
 
 public class ArcadianHoundsActiveAbility implements ActiveAbility{
     private final String name = "ARTEMIS_ACTIVE_ARCADIAN_HOUNDS";
-    private final int coolDown = 240 * 20;
+    private final int tickSpeed = 20; // minecraft tickspeed, use this value times seconds for timing things
+    private final int coolDown = tickSpeed * 240;
 
     @Override
     public String getName() {
@@ -27,7 +28,7 @@ public class ArcadianHoundsActiveAbility implements ActiveAbility{
 
         int cooldown = component.getCooldown(name);
         if (cooldown > 0) {
-            String msg = String.format("Arcadian Hounds on cooldown: %ds", cooldown / 20);
+            String msg = String.format("Arcadian Hounds on cooldown: %ds", cooldown / tickSpeed);
             player.sendMessage(Text.literal(msg).formatted(Formatting.GRAY), false);
             return false;
         }
@@ -59,7 +60,7 @@ public class ArcadianHoundsActiveAbility implements ActiveAbility{
             hound.setCustomName(Text.literal("Arcadian Hound").formatted(Formatting.AQUA));
             world.spawnEntity(hound);
 
-            hound.setLifeTime(20 * 120);
+            hound.setLifeTime(tickSpeed * 120);
         }
 
         component.setCooldown(name,  coolDown);

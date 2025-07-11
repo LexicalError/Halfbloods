@@ -7,7 +7,7 @@ import net.minecraft.world.World;
 
 public class NightsMaidenPassiveAbility implements PassiveAbility{
     private int tickCounter = 0;
-
+    private final int effectDelay = 40;
     @Override
     public String getName() {
         return "ARTEMIS_PASSIVE_NIGHTS_MAIDEN";
@@ -19,7 +19,7 @@ public class NightsMaidenPassiveAbility implements PassiveAbility{
         World world = player.getWorld();
         if(world.isNight()) {
             player.addStatusEffect(new StatusEffectInstance(StatusEffects.REGENERATION, 210, 0, true, false));
-            if(tickCounter % 40 == 0){
+            if(tickCounter % effectDelay == 0){
                 player.addStatusEffect(new StatusEffectInstance(StatusEffects.SATURATION, 1, 0, true, false));
             }
         }

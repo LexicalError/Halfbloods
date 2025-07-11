@@ -9,8 +9,9 @@ import net.minecraft.util.Formatting;
 public class MoonlitArrowsActiveAbility implements ActiveAbility{
     private final String name = "ARTEMIS_ACTIVE_MOONLIT_ARROWS";
     private final String durationName = "ARTEMIS_ACTIVE_MOONLIT_ARROWS_DURATION";
-    private final int coolDown = 20 * 60;
-    private final int duration = 20 * 30;
+    private final int tickSpeed = 20; // minecraft tickspeed, use this value times seconds for timing things
+    private final int coolDown = tickSpeed * 60;
+    private final int duration = tickSpeed * 30;
 
     public boolean isActive(PlayerEntity player) {
         PlayerComponent component = ModComponents.PLAYER_COMPONENT.get(player);
@@ -30,7 +31,7 @@ public class MoonlitArrowsActiveAbility implements ActiveAbility{
         PlayerComponent component = ModComponents.PLAYER_COMPONENT.get(player);
         int cooldown = component.getCooldown(name);
         if (cooldown > 0) {
-            String msg = String.format("Moonlit Arrows on cooldown: %ds", cooldown / 20);
+            String msg = String.format("Moonlit Arrows on cooldown: %ds", cooldown / tickSpeed);
             player.sendMessage(Text.literal(msg).formatted(Formatting.GRAY), false);
             return false;
         }

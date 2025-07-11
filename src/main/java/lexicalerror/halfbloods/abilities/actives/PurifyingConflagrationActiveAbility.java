@@ -17,7 +17,7 @@ import static lexicalerror.halfbloods.damage_types.ModDamageTypes.PURIFYING_CONF
 
 public class PurifyingConflagrationActiveAbility implements ActiveAbility{
     private final String name = "URIEL_ACTIVE_PURIFYING_CONFLAGRATION";
-    private final int tickSpeed = 20;
+    private final int tickSpeed = 20; // minecraft tickspeed, use this value times seconds for timing things
     private final int coolDown = tickSpeed * 10;
     private final float abilityRange = 8.0F;
 

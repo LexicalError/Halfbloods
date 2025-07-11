@@ -19,7 +19,7 @@ import static lexicalerror.halfbloods.damage_types.ModDamageTypes.FIRES_OF_ASCEN
 public class FiresOfAscensionActiveAbility implements ActiveAbility{
     private final String name = "URIEL_ACTIVE_FIRES_OF_ASCENSION";
     private final String durationName = "URIEL_ACTIVE_FIRES_OF_ASCENSION";
-    private final int tickSpeed = 20;
+    private final int tickSpeed = 20; // minecraft tickspeed, use this value times seconds for timing things
     private final int coolDown = tickSpeed * 90;
     private final int duration = tickSpeed * 60;
     private static int tickCounter = 0;
