@@ -12,8 +12,8 @@ Fabric 0.16.14
 Fabric API 0.128.2+1.21.7
 
 ## Modding status
-- Uriel: Not implemented
-- Artimes: **IMPLEMENTED YAY**
+- Uriel: **IMPLEMENTED**
+- Artemis: **IMPLEMENTED YAY**
 - Nyx: Not implemented
 
 ## Usage
@@ -79,7 +79,7 @@ Create a java class `<passive>.java` that implements `passive`:
 **Active**  
 Create a java class `<active>.java` that implements `active`:
 1. `getName()`, define your passive name here.
-2. `apply()`, does nothing.
+2. `apply()`, is called every tick.
 3. `canActivate()` gets called and checked everytime the ability hotkey is pressed.
 4. `activate()` gets called if ability hotkey is pressed and `canActivate()` is true.
 
